@@ -1,0 +1,39 @@
+[
+    {
+        "title": "The Colour of Magic",
+        "cover": "images/book_1.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "link": "documents/book_1.pdf"
+    },
+    {
+        "title": "Mostly Harmless",
+        "cover": "images/book_2.png",
+        "description": "Morbi blandit eros ut blandit maximus.",
+        "link": "documents/book_2.pdf"
+    },
+    {
+        "title": "The Foundation Trilogy",
+        "cover": "images/book_3.png",
+        "description": "Mauris consequat quam sed imperdiet viverra.",
+        "link": "documents/book_3.pdf"
+    },
+    {
+        "title": "The Martian",
+        "cover": "images/book_1.png",
+        "description": "Praesent commodo nulla luctus ipsum vestibulum laoreet.",
+        "link": "documents/book_1.pdf"
+    },
+    {
+        "title": "Dune",
+        "cover": "images/book_2.png",
+        "description": "Nunc a sem lacinia, sollicitudin orci sit amet, hendrerit nibh.",
+        "link": "documents/book_2.pdf"
+    },
+    {
+        "title": "The Caves of Steel",
+        "cover": "images/book_3.png",
+        "description": "Vestibulum suscipit enim a ultricies hendrerit.",
+        "link": "documents/book_3.pdf"
+    }
+
+]

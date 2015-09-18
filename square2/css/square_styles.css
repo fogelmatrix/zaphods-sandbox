@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/*
+
+Name: 
+URI: 
+Description: This site was developed by Chris Weston for ***. Copyright 20**.
+Author: Chris Weston
+
+*/
+
+
+/**************************************************
+
+
+General Page Rules
+
+
+**************************************************/
+
+
+
+body {
+	background-color:#fff;
+	font-family: 'Source Sans Pro', Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align:center;
+
+}
+
+h1, h2, h3, h4, p, ul, ol, li, a {
+	
+}
+
+h1 {
+	font-size:48px;
+	
+}
+
+h2 {
+	font-size:28px;
+	font-weight:100;
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+p, ul, ol, li, a, label, option, select, button{
+	font-size:18px;
+}
+
+p{
+	text-align:left;
+}
+
+form{
+	margin:20px auto 80px;
+	
+}
+
+select{
+	margin-bottom:20px;
+	
+}
+
+header{
+	height:100px;
+	background-color:#efefef;
+	
+}
+
+footer{
+	background-color:#f1f1f1;
+
+}
+
+
+/**************************************************
+
+
+Class Rules
+
+
+**************************************************/
+
+.container, .container-fluid{
+	max-width:1200px;
+		
+}
+.page-header{
+	margin:0;
+}
+
+/********************* HEADER *********************/
+
+#company_logo{
+	height:98px;
+	width:242px;
+	background-image:url(../images/main_logo.png);
+	display:block;
+	
+}
+
+header.nav {
+	text-align:center;
+
+}
+.nav ul{
+	list-style:none;
+	float:right;
+	top:0;
+	position:relative;
+	padding:0;
+	
+}
+
+a.nav_btn{
+	float:none;
+}
+
+.nav ul li{
+	display:inline-block;
+}
+
+.subnav a.nav_btn{
+	padding: 0 12px;
+}
+
+.subnav ul li a{
+	top:0;
+	position:relative;
+	font-size:12px;
+	text-decoration:underline;
+}
+
+header .navbar{
+	top:16px;
+	position:relative;	
+	height:50px;
+	display:block;
+}
+
+.navbar a.nav_btn{
+	padding: 12px 12px 20px;
+	position:relative;
+	top:0;
+	
+}
+.navbar ul{
+	margin-top:5px;
+}
+
+.navbar ul li a{
+	font-size:14px;
+}
+
+.yellow_btn{
+	background-color:#ecac02;	
+	color:#fff;
+}
+
+#mobile-header {
+    display: none;
+}
+
+
+/********************* BLUE BANNER *********************/
+
+section.page-header#blue_banner{
+	width:100%;
+	background-color:#00529b;
+	border-top:solid #204177 20px;
+	min-height:220px;
+	color:#fff;
+}
+
+section.page-header h1{
+	padding-top:32px;
+}
+
+
+/********************* RESOURCES *********************/
+
+section#resources{
+	border-bottom:solid #E5E5E5 1px;
+}
+section#resources h1{
+	font-size:54px;
+	margin-top:60px;
+	padding-bottom:20px;
+}
+section#resources input{
+	margin-bottom:20px;
+}
+
+#resource_row{
+	margin-top:30px;
+	margin-bottom:30px;
+	
+}
+
+.resource_column{
+	
+}
+
+.resource_item{
+	border:solid 1px	 #d2e2ef;
+	padding:0;
+	margin-left:14px;
+	margin-right:14px;
+	margin-bottom:50px;
+	background-color:#f4f8fb;
+	height:400px;
+	position:relative;
+
+}
+
+.resource_item img{
+	margin-top:20px;
+	margin-bottom:15px
+}
+
+.resource_item h3{
+	font-size:22px;
+	color:#204177;
+	font-weight:700;
+	padding:0 85px;
+}
+
+.resource_item p{
+	font-size:22px;
+	color:#204177;
+	font-weight:400;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+
+a.downloader{
+	background-color:#ecac02;
+	width:100%;
+	display:block;
+	margin:0;
+	padding:14px 0;
+	font-size:18px;
+	text-align:center;
+	height:50px;
+	vertical-align:middle;
+	color:#fff;
+	top: 350px;
+    position: absolute;
+}
+
+/********************* FOOTER *********************/
+footer ul{
+	list-style:none;
+	padding-left:0;
+}
+.footer_menu ul li{
+	text-align:left !important;
+}
+	
+.footer_menu ul li a{
+	font-size:12px;
+	font-weight:400;
+}
+
+.footer_menu{
+	margin-top:40px;
+	margin-bottom:48px;
+}
+
+#social_links{
+	float:right;
+	
+}
+
+.bug{
+	color:#204177;
+	text-align:center;
+}
+.row.bug{
+	margin:20px 0 80px;
+	padding:0;
+}
+
+/********************* NEW BOOK FORM  *********************/
+
+
+#new_books{
+	border-top: solid #204177 20px;
+}
+
+.book_input{
+	width:60%;
+
+}
+
+section#new_books input{
+	margin-bottom:20px;
+}
+
+
+
+button.book_input{
+	width:40%;
+
+}
+
+.book_label{
+	
+}
+
+
+input.book_radio{
+	position:relative;
+	margin:auto;
+	width:auto;
+	
+}
+
+/********************* DESKTOP  *********************/
+
+@media (min-width: 991px){
+
+	#footer_menu_1{
+		margin-left:20px;
+		
+	}
+	#footer_menu_2{
+		margin-left:-40px;
+		
+	}
+	.bug{
+		float:right;
+		font-size:12px;
+	}
+	.col.bug{
+			margin:-80px 0 0 0;
+	
+	}
+
+	#cover_list{
+		padding-left: 130px;
+		padding-right: 130px;
+	
+	}
+
+}
+
+/********************* TABLET and MOBILE *********************/
+
+@media (max-width: 990px) {
+	
+	
+	.footer_menu ul li{
+		text-align:center !important;
+	}
+	.footer_menu ul li a{
+		text-align:center !important;
+		font-size:18px;
+		font-weight:400;
+	}
+	#social_links{
+		margin:20px 0;
+		float:none;
+	
+	}
+    #mobile-header {
+        display: block;
+    }
+	a#responsive-menu-button {
+		float: left;
+		padding:20px 0;
+		margin:10px 0;
+		float:left;
+	}
+
+	#company_logo{
+		margin-top:10px;
+		float:right
+	}
+
+	div#sidr-main{
+	}
+}
+
+/********************* MOBILE *********************/
+
+@media (max-width: 767px){
+
+	#company_logo{
+		background-image:url(../images/main_logo_sm.png);
+		display:block;
+		height:74px;
+		width:182px;
+		float:right
+	}
+	a.downloader{
+		top: 400px;
+	}
+
+	.resource_item{
+		height:450px;
+	}
+}
+
+/****************************  Reference styles- Delete upon launch  ****************************/
+
+#redArea, .redArea{
+	background-color:rgba(255,0,0,0.2) !important;
+}
+
+#blueArea, .blueArea{
+	background-color:rgba(0,0,255,0.2) !important;
+}
+
+#greenArea, .greenArea{
+	background-color:rgba(0,255,79,0.2) !important;
+}
+
+#orangeArea, .orangeArea{
+	background-color:rgba(255,165,0,0.2) !important;
+}
+
+#purpleArea, .purpleArea{
+	background-color:rgba(85,26,139,0.2) !important;
+}
+
+#redBorder, .redBorder{
+	border:red solid 1px !important;
+}

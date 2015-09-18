@@ -1,0 +1,239 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,300,500,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/square_styles.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.sidr.dark.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script src="js/jquery.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="js/square_controllers.js"></script>
+<script src="js/square2.js"></script>
+
+
+<script type="text/javascript">
+      $(function () {
+
+        $('#book_form').on('submit', function (e) {
+
+          //e.preventDefault();
+			
+          $.ajax({
+            type: 'post',
+            url: 'data/post.php',
+            data: $('#book_form').serialize(),
+            success: function (response) {
+				alert('form was submitted');
+            }
+          });
+		  
+		  
+
+        });
+
+      });
+</script>
+
+<script src="js/jquery.sidr.min.js"></script>
+
+<script type="text/javascript">
+    $('#responsive-menu-button').sidr({
+      name: 'sidr-main',
+      source: '#navigation'
+    });
+</script>
+
+<!-- Start of Async HubSpot Analytics Code -->
+  <script type="text/javascript">
+    (function(d,s,i,r) {
+      if (d.getElementById(i)){return;}
+      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+	  var mathProblem = (Math.ceil(new Date()/r)*r);
+      n.id=i;n.src='//js.hs-analytics.net/analytics/' + mathProblem + '/1585755.js';
+      e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+  </script>
+<!-- End of Async HubSpot Analytics Code -->
+
+<title>Square 2 Project</title>
+
+</head>
+
+<body ng-app="squareApp">
+
+<header>
+
+	<div class="container">
+    	<div class="row">
+        	<div class="hidden-md hidden-lg col-xs-2 col-sm-2">
+        	    <div id="mobile-header">
+                    <a id="responsive-menu-button" href="#sidr-main">Menu</a>
+                </div>
+            </div>
+
+        	<div class="col-md-3 col-xs-10 col-sm-10">
+            	<a href="#" id="company_logo"></a>
+            </div>
+            
+            <div class="col-md-9 hidden-xs hidden-sm" id="navigation">
+            	<div class="subnav nav">
+                	<ul>
+                    	<li><a href="#" class="nav_btn">Resources</a></li>
+                    	<li><a href="#" class="nav_btn">Blog</a></li>
+                    	<li><a href="#" class="nav_btn">Support</a></li>
+                    	<li><a href="#" class="nav_btn">Client Login</a></li>
+                    </ul>
+                </div>
+                <nav class="navbar nav">
+                	<ul>
+                    	<li><a href="#" class="nav_btn">Community Healthcare Solutions</a></li>
+                    	<li><a href="#" class="nav_btn">Our Approach</a></li>
+                    	<li><a href="#" class="nav_btn">Success Stories</a></li>
+                    	<li><a href="#" class="nav_btn">About</a></li>
+                    	<li><a href="#" class="yellow_btn nav_btn">Free Consultation</a></li>
+                    </ul>
+                </nav>
+			</div>
+        </div>
+    </div>
+
+</header>
+
+<section class="page-header" id="blue_banner">
+    <div class="container">
+        <div class="row">
+        	<h1>Welcome to our Resources Page</h1>
+            <h2>Lorem Ipsum</h2>
+        	
+        </div><!-- END ROW -->            
+    </div><!-- END CONTAINER -->
+</section>
+<div  ng-controller="BookListController">
+<section id="resources">
+    <div class="container-fluid">
+        <div class="row">
+        	<h1>Free Resources</h1>
+            <h3>Resource Directory</h3>
+            <label>Narrow Results:</label><br>
+            <input ng-model="query" placeholder="Search">
+        
+        </div><!-- END ROW -->            
+        <div class="row" id="resource_row">
+        	<div class="col-md-4 col-xs-12 col-sm-6 resource_column" ng-repeat="item in booklist | filter: query ">
+            	<div class="resource_item">
+                    <img src="{{item.cover}}">
+                    <h3>{{item.title}}</h3>
+                    <h4>by {{item.author}}</h4>
+                    <p>{{item.description}}</p>
+                    <a href="{{item.link}}" class="downloader">DOWNLOAD NOW</a>
+                </div>
+            </div>
+
+        </div><!-- END ROW -->    
+    </div><!-- END CONTAINER -->
+</section>
+
+<section id="new_books">
+    <div class="container-fluid">
+        <div class="row">
+        	<div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Enter A New Book Title To The Library</h2>
+            </div>
+        </div>
+        <form id="book_form" class="" method="post" >
+
+            <div class="row">
+                <div class="col-md-2 col-sm-3 hidden-xs"></div>
+                <div class="col-md-8 col-xs-12 col-sm-6">
+                    <fieldset id="book_form_area"  ng-submit="submit()">
+                            <label for="book_title" class="book_label">Title</label><br>
+                            <input type="text" id="book_title" required class="book_input" name="book_title">
+                            <br>
+                            <label for="book_author" class="book_label">Author</label><br>
+                            <input type="text" id="book_author" required class="book_input" name="book_author">
+                            <br>	
+                            <label for="book_description" class="book_label">Description</label><br>
+                            <input type="text" id="book_description" required class="book_input" name="book_description">
+                            <br>
+                        
+                    </fieldset>
+                </div>
+                <div class="col-md-2 col-sm-3 hidden-xs"></div>
+            </div><!-- END ROW -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label class="book_label">Please select a thumbnail image.</label>
+                </div>
+            </div>
+
+            <div class="row" id="cover_list">
+
+                <div class="col-md-3 col-sm-6 col-xs-6" ng-repeat="item in booklist | filter: query | limitTo:numLimit">
+                    <fieldset id="book_covers">
+                        <br>
+                        <img src="{{item.cover}}"><br>
+                        <input type="radio" class="book_input book_radio" value="{{item.cover}}" required  name="book_cover" id="book_cover">
+                    <br>
+                    </fieldset>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button class="book_input" name="submit" >Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div><!-- END CONTAINER -->
+    
+</section>
+</div>
+<footer>
+    <div class="container">
+        <div class="row footer_menu">
+            <div class="col-md-3 col-xs-12" id="footer_menu_1">
+                <ul>
+                    <li><a href="#">Community Healthcare Solutions</a></li>
+                    <li><a href="#">Our Approach</a></li>
+                    <li><a href="#">Success Stoties</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Schedule Consultation</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-12" id="footer_menu_2">
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Client Login	</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-12"><img src="images/sm_logo.png"></div>
+            <div class="col-md-5 col-xs-12">
+                <div id="social_links">
+                        <a href="http://www.twitter.com" target="_blank"><img src="images/social_icons/twitter.png"></a>
+                        <a href="http://www.pinterest.com" target="_blank"><img src="images/social_icons/pinterest.png"></a>
+                        <a href="http://www.youtube.com" target="_blank"><img src="images/social_icons/youtube.png"></a>
+                        <a href="https://plus.google.com/" target="_blank"><img src="images/social_icons/googleplus.png"></a>
+                        <a href="http://www.linkedin.com" target="_blank"><img src="images/social_icons/linkedin.png"></a>
+                </div>
+            </div>
+        </div><!-- END ROW -->
+        <div class="row bug">
+                <div class="col-md-12 col bug">Inbound Marketing by Square 2 Marketing&nbsp;&nbsp;|&nbsp;&nbsp;&copy;2015 ICE TECHNOLOGIES, INC.</div>
+        </div>
+    </div>  
+</footer>
+
+
+</body>
+</html>

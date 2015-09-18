@@ -1,0 +1,271 @@
+.image-grid {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.image-grid:after,
+.image-item:before {
+    content: '';
+    display: table;
+}
+.image-grid:after {
+    clear: both;
+}
+ 
+.image-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: default;
+}
+ 
+.image-content-wrapper {
+    position: absolute;
+ 
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+ 
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+ 
+.image-content {
+    position: absolute;
+ 
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+	
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+ 
+.image-content > div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+ 
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+ 
+.image-content .image-content-back {
+    overflow: hidden;
+    
+    -webkit-transform: rotate3d(0,1,0,180deg);
+    -moz-transform: rotate3d(0,1,0,180deg);
+    -o-transform: rotate3d(0,1,0,180deg);
+    -ms-transform: rotate3d(0,1,0,180deg);
+    transform: rotate3d(0,1,0,180deg);
+}
+ 
+.image-item:hover .image-content {
+    -webkit-transform: rotate3d(0,1,0,-180deg);
+    -moz-transform: rotate3d(0,1,0,-180deg);
+    -o-transform: rotate3d(0,1,0,-180deg);
+    -ms-transform: rotate3d(0,1,0,-180deg);
+    transform: rotate3d(0,1,0,-180deg);
+}
+ 
+/* ===== Base Typography Styles ===== */
+.image-content h3 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+.image-content p {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+}
+.image-content p a {
+    display: block;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+}
+ 
+/* ===== Styles for Square Images ===== */ 
+.square .image-item {
+    border-radius: 0;
+    background-image: none !important;
+} 
+.square .image-content-wrapper {
+    top: 0px;
+    left: 0px;
+    background: transparent;
+}
+.square .image-content {
+    border-radius: 0;
+}
+.square .image-content > div {
+    border-radius: 0;
+}
+.square .main-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    
+/* ===== Styles for Circle Images ===== */       
+.circle .image-item {
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.circle .image-content-wrapper {
+    border-radius: 50%;
+ 
+    top: 20px;
+    left: 20px;
+    background: #FFFFFF;
+    box-shadow: 
+        0 0 0 20px rgba(255,255,255,0.2), 
+        inset 0 0 3px rgba(114,114,114, 0.8);
+}
+.circle .image-content {
+    border-radius: 50%;
+}
+.circle .image-content > div {
+    border-radius: 50%;
+}
+.circle .image-item:hover .image-content-wrapper {
+    box-shadow: 
+        0 0 0 0 rgba(255,255,255,0.8), 
+        inset 0 0 3px rgba(114,114,114, 0.8);
+}
+ 
+/* ===== Styles for Small Size Images ===== */   
+.small .image-grid li {
+    width: 220px;
+    height: 220px;
+    display: inline-block;
+    margin: 20px;
+}
+.small.circle .main-img {
+    background-size:  auto 220px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.small .image-content h3 {
+    font-size: 14px;
+    margin: 0 12px;
+    padding: 40px 0 10px;
+}
+.small .image-content p {
+    padding: 10px 5px;
+    margin: 0 15px;
+    font-size: 13px;
+}
+.small .image-content p a {
+    font-weight: 700;
+    font-size: 10px;
+}
+.small.square .image-content-wrapper, .small.square .image-content {
+    width: 220px;
+    height: 220px;
+}
+.small.circle .image-content-wrapper, .small.circle .image-content {
+    width: 180px;
+    height: 180px;
+}
+    
+/* ===== Styles for Large Size Images ===== */   
+.large .image-grid li {
+    width: 295px;
+    height: 295px;
+    display: inline-block;
+    margin: 10px;
+}
+.large.circle .main-img {
+    background-size:  auto 295px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.large .image-content h3 {
+    font-size: 18px;
+    margin: 0 30px;
+    padding: 50px 0 10px;
+}
+.large .image-content p {
+    padding: 5px 5px 15px;
+    margin: 0 20px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.large .image-content p a {
+    font-weight: 700;
+    font-size: 12px;
+}
+.large.square .image-content-wrapper, .large.square .image-content {
+    width: 295px;
+    height: 295px;
+}
+.large.circle .image-content-wrapper, .large.circle .image-content {
+    width: 255px;
+    height: 255px;
+}
+ 
+/* ===== Styles for Light Theme ===== */
+.light .image-content .image-content-back {
+    background: #ddd;
+}
+.light .image-content h3 {
+    color: #444;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+.light .image-content p {
+    color: #444;
+}
+.light .image-content p a {
+    color: #444;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 8px 0 7px;
+    margin: 0 15px;
+}
+.light .image-content p a:hover {
+    color: #F78538;
+    border: 2px solid #F78538;
+}
+    
+/* ===== Styles for Dark Theme ===== */
+.dark .image-content .image-content-back {
+    background: #333;
+}
+.dark .image-content h3 {
+    color: #f9f9f9;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+}
+.dark .image-content p {
+    color: #f9f9f9;
+}
+.dark .image-content p a {
+    color: #f9f9f9;
+    border: 2px solid #f9f9f9;
+    border-radius: 5px;
+    padding: 8px 0 7px;
+    margin: 0 15px;
+}
+.dark .image-content p a:hover {
+    color: #F78538;
+    border: 2px solid #F78538;
+}
